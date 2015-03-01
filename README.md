@@ -16,6 +16,7 @@ pip install -r requirements.txt
 Usage:
 
 python podcast_cogimix.py
+
 wget -qO- localhost:8000/refresh &> /dev/null
 
 
