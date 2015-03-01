@@ -18,19 +18,19 @@ url_virgin = "http://podcast-non-officiel.blogspot.fr/search/label/Virgin%20Toni
 Retourne l'url archive.org présent dans la page de l'url passée en param
 """
 def get_archive_url(url):
-	r = requests.get(url,headers=headers)
-	return reg_archive.findall(r.text)[0]
+    r = requests.get(url,headers=headers)
+    return reg_archive.findall(r.text)[0]
 """
 Retourne une liste de couple label,url virgin tonic
 """	
 def get_virgin_tonic():
-	list_vt = []
-	r =  requests.get(url_virgin, headers=headers)	
-	dico = reg_url_vt.findall(r.text)
-	for url,label in dico:
-		pod = [label,get_archive_url(url)]
-		list_vt.append(pod)	
-	return list_vt
+    list_vt = []
+    r =  requests.get(url_virgin, headers=headers)	
+    dico = reg_url_vt.findall(r.text)
+    for url,label in dico:
+        pod = [label,get_archive_url(url)]
+        list_vt.append(pod)	
+    return list_vt
 
 if __name__ == "__main__":
-	print get_virgin_tonic()
+    print get_virgin_tonic()
