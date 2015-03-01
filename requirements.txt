@@ -1,0 +1,4 @@
+bottle==0.12.8
+bottle-mongo==0.2.4
+pymongo==2.8
+requests==2.5.3
